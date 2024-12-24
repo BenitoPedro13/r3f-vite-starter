@@ -12,17 +12,12 @@ import { useExplode } from "../hooks/useExplode";
 export function WesternBluebird(props) {
   const { nodes, materials } = useGLTF("/models/Western bluebird.glb");
   const group = useRef();
-  const { bluebirddistance } = useControls({
-    bluebirddistance: {
-      value: 3,
-      min: 0,
-      max: 50,
-    },
-  });
+
   useExplode(group, {
-    distance: bluebirddistance,
+    distance: 3,
     rotationEnabled: true,
   });
+
   return (
     <group {...props} dispose={null} ref={group}>
       {/* <mesh
