@@ -21,7 +21,7 @@ export const Experience = () => {
 
   return (
     <>
-      <OrbitControls enableZoom={false} />
+      {/* <OrbitControls enableZoom={false} enableRotate={false} /> */}
       <Float floatIntensity={2} speed={3}>
         <Model scale={0.01} visible={item === "triangularSphere"} />
         <BananaModel scale={0.01} visible={item === "banana"} />
