@@ -19,9 +19,17 @@ export const Experience = () => {
 
   const xLogo = useTexture("/textures/x-logo.png");
 
+  function isTouchDevice() {
+    return (
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    );
+  }
+
   return (
     <>
-      {/* <OrbitControls enableZoom={false} enableRotate={false} /> */}
+      {!isTouchDevice() ? <OrbitControls enableZoom={false} /> : null}
       <Float floatIntensity={2} speed={3}>
         <Model scale={0.01} visible={item === "triangularSphere"} />
         <BananaModel scale={0.01} visible={item === "banana"} />
